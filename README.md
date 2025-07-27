@@ -508,6 +508,13 @@ uv run hatch build
 uv run twine check dist/*
 ```
 
+```bash
+# Check what was created
+ls dist/*
+mcp_youtube_extractor-0.1.0-py3-none-any.whl
+mcp_youtube_extractor-0.1.0.tar.gz
+```
+
 ### Release Process
 
 ```bash
@@ -519,25 +526,22 @@ uv run pytest tests/ -v
 # 4. Build package
 uv run hatch build
 
-# 5. Upload to PyPI
+# 5. Upload to TestPyPI
+uv run twine upload --repository testpypi dist/*
+
+# 6. Test installation from TestPyPI
+pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ mcp-youtube-extractor
+
+# 7. Upload to PyPI
 uv run twine upload dist/*
 
-# 6. Test installation
+# 8. Test installation
 pip install mcp-youtube-extractor
-
-# 7. Create release documentation
-# 8. Commit and tag
-git add .
-git commit -m "Release v0.1.0"
-git tag -a v0.1.0 -m "Release v0.1.0"
-git push origin main --tags
 ```
 
 ## Documentation
 
 - **[README.md](README.md)** - Main project documentation (this file)
-- **[CHANGELOG.md](CHANGELOG.md)** - Complete version history
-- **[RELEASE-NOTES-v0.1.0.md](RELEASE-NOTES-v0.1.0.md)** - Latest release details
 - **[mcp-sse-guide.md](mcp-sse-guide.md)** - Comprehensive guide for SSE transport protocol testing
 - **API Documentation** - Inline documentation in source code
 - **Test Documentation** - Testing strategy and coverage reports
@@ -552,7 +556,6 @@ This project is based on the original [mcp_youtube_extract](https://github.com/s
 - **Enhanced CLI interface** with additional options
 - **Comprehensive transport protocol documentation**
 - **Extended testing and debugging capabilities**
-- **Professional release management** with changelog and release notes
 - **Modern dependency management** with latest security updates
 
 Special thanks to the original author for creating the foundational MCP YouTube extraction framework.
@@ -594,4 +597,3 @@ If you encounter any issues or have questions, please:
 
 - **GitHub Repository**: [https://github.com/hwang2006/mcp-youtube-extractor](https://github.com/hwang2006/mcp-youtube-extractor)
 - **PyPI Package**: [https://pypi.org/project/mcp-youtube-extractor/](https://pypi.org/project/mcp-youtube-extractor/)
-- **Release Tags**: [https://github.com/hwang2006/mcp-youtube-extractor/releases](https://github.com/hwang2006/mcp-youtube-extractor/releases)
