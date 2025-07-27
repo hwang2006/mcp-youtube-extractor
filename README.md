@@ -510,7 +510,7 @@ uv run twine check dist/*
 
 ```bash
 # Check what was created
-ls dist/*
+ls dist
 mcp_youtube_extractor-0.1.0-py3-none-any.whl
 mcp_youtube_extractor-0.1.0.tar.gz
 ```
