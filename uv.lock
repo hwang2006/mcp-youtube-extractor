@@ -574,8 +574,8 @@ cli = [
 ]
 
 [[package]]
-name = "mcp-youtube-extract"
-version = "0.1.1"
+name = "mcp-youtube-extractor"
+version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "google-api-python-client" },
