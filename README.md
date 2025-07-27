@@ -21,11 +21,7 @@ A Model Context Protocol (MCP) server for YouTube operations, demonstrating core
 
 ## 📦 Available on PyPI
 
-This package is now available on PyPI! You can install it directly with:
-
-```bash
-pip install mcp-youtube-extractor
-```
+This package is now available on PyPI! You can install it directly from PyPI. **`Python 3.13+`** is required for this package.
 
 Visit the package page: [mcp-youtube-extractor on PyPI](https://pypi.org/project/mcp-youtube-extractor/)
 
@@ -38,6 +34,7 @@ The easiest way to get started is to install from PyPI:
 ```bash
 pip install mcp-youtube-extractor
 ```
+**`Requirements`**: Python 3.13+ is required for this package.
 
 Or using pipx (recommended for command-line tools):
 
