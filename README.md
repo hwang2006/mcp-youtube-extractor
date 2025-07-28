@@ -63,7 +63,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 
 uv is written in Rust, so you'll need the Rust toolchain first.
 
-1. **Install Rust (Recommended Method)**
+1. **Install Rust **
    1. Visit this link or copy and paste it into your browser:
       👉 https://win.rustup.rs/
    2. The **installer (rustup-init.exe)** will download automatically
@@ -71,7 +71,7 @@ uv is written in Rust, so you'll need the Rust toolchain first.
       - This installs `cargo`, `rustc`, `rustup`, `rustdoc`, etc.
       - After installation, `C:\Users\[username]\.cargo\bin` is automatically added to PATH
 
-2. **Install uv from GitHub (Direct Method)**
+2. **Install uv from GitHub **
 
    After Rust is installed, install uv with this command:
    ```powershell
