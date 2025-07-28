@@ -590,11 +590,10 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## Support
 
 If you encounter any issues or have questions, please:
-1. Check the [CHANGELOG.md](CHANGELOG.md) and [RELEASE-NOTES-v0.1.0.md](RELEASE-NOTES-v0.1.0.md)
-2. Review the [existing issues](https://github.com/hwang2006/mcp-youtube-extractor/issues)
-3. Create a new issue with detailed information about your problem
-4. Include logs and error messages when applicable
-5. For SSE transport issues, refer to the [`mcp-sse-guide.md`](mcp-sse-guide.md) troubleshooting section
+1. Review the [existing issues](https://github.com/hwang2006/mcp-youtube-extractor/issues)
+2. Create a new issue with detailed information about your problem
+3. Include logs and error messages when applicable
+4. For SSE transport issues, refer to the [`mcp-sse-guide.md`](mcp-sse-guide.md) troubleshooting section
 
 ## Links
 
