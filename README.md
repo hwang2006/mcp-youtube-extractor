@@ -192,6 +192,10 @@ To use this MCP server, you'll need a YouTube Data API key. Here's how to get on
 # Install from PyPI
 pip install mcp-youtube-extractor
 
+# Quick CLI test
+python yt_extract_cli.py --help
+python yt_extract_cli.py dQw4w9WgXcQ
+
 # Run the server
 mcp_youtube_extractor
 ```
