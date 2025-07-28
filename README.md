@@ -192,7 +192,7 @@ To use this MCP server, you'll need a YouTube Data API key. Here's how to get on
 # Install from PyPI
 pip install mcp-youtube-extractor
 
-# Quick CLI test
+# Quick CLI testing
 python yt_extract_cli.py --help
 python yt_extract_cli.py dQw4w9WgXcQ
 
@@ -221,6 +221,10 @@ For quick testing or one-off extractions, you can call the YouTube extraction fu
 # Extract Rick Astley video (Never Gonna Give You Up)
 cd mcp-youtube-extractor
 uv run python -c "from dotenv import load_dotenv; load_dotenv(); from src.mcp_youtube_extract.server import get_yt_video_info; print(get_yt_video_info('dQw4w9WgXcQ'))"
+
+# Or PyPI Installation
+cd mcp-youtube-extractor
+python -c "from dotenv import load_dotenv; load_dotenv(); from src.mcp_youtube_extract.server import get_yt_video_info; print(get_yt_video_info('dQw4w9WgXcQ'))"
 ```
 
 #### With Error Handling
