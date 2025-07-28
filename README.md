@@ -412,7 +412,7 @@ result = get_yt_video_info(video_id)
 
 ### Client Configuration
 
-To use this MCP server with a client, add the following configuration to your client's settings:
+To use this MCP server with a client (e.g., Claude Desktop), add the following configuration to your client's settings:
 
 #### Using PyPI Installation (Recommended)
 
