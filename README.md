@@ -472,8 +472,6 @@ mcp-youtube-extractor/
 ├── dist/                      # Built packages
 ├── yt_extract_cli.py          # Command-line interface script
 ├── mcp-sse-guide.md           # SSE transport testing guide
-├── CHANGELOG.md               # Version history
-├── RELEASE-NOTES-v0.1.0.md   # Release notes
 ├── .env.example               # Environment variables template
 ├── .gitignore                 # Git ignore rules
 ├── .python-version            # Python version specification
