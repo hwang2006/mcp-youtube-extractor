@@ -17,7 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated the `README.md` file to include examples of using full YouTube URLs.
 - Updated the help message in `yt_extract_cli.py` to include an example of using a full YouTube URL.
 
-## [0.1.0] - 2025-08-01
+## [0.1.0] - 2025-07-23
 
 ### Added
 - Initial release of the `mcp-youtube-extractor` project.
