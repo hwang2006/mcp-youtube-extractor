@@ -1,6 +1,7 @@
 import pytest
 from unittest.mock import patch, MagicMock
 from src.mcp_youtube_extract import youtube
+from src.mcp_youtube_extract.server import extract_video_id
 
 # Test get_video_info
 @patch('src.mcp_youtube_extract.youtube.build')
@@ -101,3 +102,16 @@ def test_format_video_info_none():
     result = youtube.format_video_info(None)
     assert 'Video not found' in result
 
+# Test extract_video_id
+@pytest.mark.parametrize("url_or_id, expected_id", [
+    ("dQw4w9WgXcQ", "dQw4w9WgXcQ"),
+    ("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "dQw4w9WgXcQ"),
+    ("https://youtu.be/dQw4w9WgXcQ", "dQw4w9WgXcQ"),
+    ("https://www.youtube.com/embed/dQw4w9WgXcQ", "dQw4w9WgXcQ"),
+    ("https://www.youtube.com/v/dQw4w9WgXcQ", "dQw4w9WgXcQ"),
+    ("https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=60s", "dQw4w9WgXcQ"),
+    ("not a valid url", None),
+    ("https://www.google.com", None),
+])
+def test_extract_video_id(url_or_id, expected_id):
+    assert extract_video_id(url_or_id) == expected_id

@@ -284,8 +284,11 @@ For more convenient command-line usage, you can use the included CLI script:
 #### Basic Usage
 
 ```bash
-# Extract full video information and transcript
+# Extract full video information and transcript using a video ID
 uv run python yt_extract_cli.py dQw4w9WgXcQ
+
+# Or using a full YouTube URL
+uv run python yt_extract_cli.py "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 ```
 
 #### Advanced Options
@@ -399,15 +402,19 @@ This script will:
 
 The server provides one main tool: `get_yt_video_info`
 
-This tool takes a YouTube video ID and returns:
+This tool takes a YouTube video ID or a full URL and returns:
 - Video metadata (title, description, channel, publish date)
 - Video transcript (with fallback logic for different transcript types)
 
 **Example Usage:**
 ```python
-# Extract video ID from YouTube URL: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+# Using a video ID
 video_id = "dQw4w9WgXcQ"
 result = get_yt_video_info(video_id)
+
+# Or using a full URL
+video_url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+result = get_yt_video_info(video_url)
 ```
 
 ### Client Configuration
@@ -472,6 +479,7 @@ mcp-youtube-extractor/
 ├── dist/                      # Built packages
 ├── yt_extract_cli.py          # Command-line interface script
 ├── mcp-sse-guide.md           # SSE transport testing guide
+├── CHANGELOG.md               # A log of all notable changes to the project
 ├── .env.example               # Environment variables template
 ├── .gitignore                 # Git ignore rules
 ├── .python-version            # Python version specification
@@ -545,6 +553,7 @@ pip install mcp-youtube-extractor
 ## Documentation
 
 - **[README.md](README.md)** - Main project documentation (this file)
+- **[CHANGELOG.md](CHANGELOG.md)** - A log of all notable changes to the project.
 - **[mcp-sse-guide.md](mcp-sse-guide.md)** - Comprehensive guide for SSE transport protocol testing
 - **API Documentation** - Inline documentation in source code
 - **Test Documentation** - Testing strategy and coverage reports

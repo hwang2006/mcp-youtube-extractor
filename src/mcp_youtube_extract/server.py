@@ -5,6 +5,8 @@ A simple MCP server that fetches YouTube video information and transcripts.
 """
 
 import os
+import re
+from urllib.parse import urlparse, parse_qs
 from mcp.server.fastmcp import FastMCP
 from .youtube import get_video_info, get_video_transcript, format_video_info
 from .logger import get_logger
@@ -18,17 +20,43 @@ logger = get_logger(__name__)
 # Create the MCP server
 mcp = FastMCP("YouTube Video Analyzer")
 
-@mcp.tool()
-def get_yt_video_info(video_id: str) -> str:
+def extract_video_id(url_or_id: str) -> str | None:
     """
-    Fetch YouTube video information and transcript.
+    Extracts the YouTube video ID from a URL or returns the string if it's already an ID.
     
     Args:
-        video_id: The YouTube video ID (e.g., 'dQw4w9WgXcQ' from https://youtube.com/watch?v=dQw4w9WgXcQ)
+        url_or_id: A YouTube URL or a video ID.
+        
+    Returns:
+        The extracted video ID, or None if it's not a valid YouTube URL or ID.
+    """
+    # Regex to match YouTube video ID
+    video_id_regex = r"^[a-zA-Z0-9_-]{11}$"
+    if re.match(video_id_regex, url_or_id):
+        return url_or_id
+
+    # Regex to find video ID in a URL
+    url_regex = r"(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})"
+    match = re.search(url_regex, url_or_id)
+    if match:
+        return match.group(1)
+        
+    return None
+
+@mcp.tool()
+def get_yt_video_info(url_or_id: str) -> str:
+    """
+    Fetch YouTube video information and transcript from a video ID or URL.
+    
+    Args:
+        url_or_id: The YouTube video ID (e.g., 'dQw4w9WgXcQ') or full URL.
     
     Returns:
-        A formatted string containing video information and transcript
+        A formatted string containing video information and transcript.
     """
+    video_id = extract_video_id(url_or_id)
+    if not video_id:
+        return f"Error: Invalid YouTube URL or video ID provided: {url_or_id}"
     logger.info(f"MCP tool called: get_yt_video_info with video_id: {video_id}")
     
     # Try to get API key from environment variable first, then from context
