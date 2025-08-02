@@ -7,7 +7,7 @@ from .server import mcp, main
 
 logger = get_logger(__name__)
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
 logger.info(f"MCP YouTube Extract package initialized, version: {__version__}")
 
