@@ -40,7 +40,7 @@ def extract_video_id(url_or_id: str) -> str | None:
 
 def main():
     parser = argparse.ArgumentParser(description="Extract YouTube video information and transcript from a video ID or URL")
-    parser.add_argument("url_or_id", help="YouTube video ID (e.g., dQw4w9WgXcQ) or full URL (e.g., https://www.youtube.com/watch?v=dQw4w9WgXcQ)")
+    parser.add_argument("url_or_id", help='YouTube video ID (e.g., dQw4w9WgXcQ) or full URL (e.g., "https://www.youtube.com/watch?v=dQw4w9WgXcQ")')
     parser.add_argument("--info-only", action="store_true", help="Get only video information, skip transcript")
     parser.add_argument("--transcript-only", action="store_true", help="Get only transcript, skip video info")
     parser.add_argument("--output", "-o", help="Output file (default: stdout)")
