@@ -287,7 +287,7 @@ For more convenient command-line usage, you can use the included CLI script:
 # Extract full video information and transcript using a video ID
 uv run python yt_extract_cli.py dQw4w9WgXcQ
 
-# Or using a full YouTube URL
+# Or using a full YouTube URL in quote(" or ')
 uv run python yt_extract_cli.py "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 ```
 
