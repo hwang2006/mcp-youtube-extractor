@@ -1,12 +1,14 @@
 # Changelog
-
 All notable changes to this project will be documented in this file.
-
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.2.0] - 2025-08-01
+## [0.2.1] - 2025-08-13
+### Changed
+- Updated Python version requirement from `>=3.13` to `>=3.10` for broader compatibility.
+- Version bump to 0.2.1 for patch release.
 
+## [0.2.0] - 2025-08-01
 ### Added
 - Support for full YouTube URLs in addition to video IDs in the `get_yt_video_info` tool and the command-line interface.
 - New unit tests for the URL parsing functionality.
@@ -18,7 +20,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated the help message in `yt_extract_cli.py` to include an example of using a full YouTube URL.
 
 ## [0.1.0] - 2025-07-23
-
 ### Added
 - Initial release of the `mcp-youtube-extractor` project.
 - MCP server with a tool to extract YouTube video information and transcripts.
