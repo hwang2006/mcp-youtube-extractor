@@ -34,7 +34,6 @@ The easiest way to get started is to install from PyPI:
 ```bash
 pip install mcp-youtube-extractor
 ```
-**`Requirements`**: Python 3.13+ is required for this package.
 
 Or using pipx (recommended for command-line tools):
 
